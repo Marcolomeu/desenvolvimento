@@ -4,17 +4,15 @@ export const styles = StyleSheet.create({
     container: {
         display: "flex",
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
         flexDirection: "column",
         backgroundColor: '#DB4E37',
+        padding: 10
     },
 
     titulo_container: {
         display: "flex",
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingBottom: 20,
+        paddingTop: 50,
+        paddingBottom: 10,
     },
 
     contener_person: {  
@@ -34,7 +32,7 @@ export const styles = StyleSheet.create({
     contener_resultado: {
         display: "flex",
         alignItems: "center",
-        borderColor: "#159A9C",
+        borderColor: "black",
         borderWidth: 2,
         borderRadius: 10,
         gap: 10,
@@ -57,7 +55,7 @@ export const styles = StyleSheet.create({
     sub_titul: {
         fontSize: 20,
         fontWeight: "bold",
-        color: "#002333",
+        color: "white",
         paddingBottom: 20,
     },
 
@@ -71,17 +69,18 @@ export const styles = StyleSheet.create({
     input: {
         flex: 1,
         textAlign: 'left',
-        color: "#002333",
+        color: "white",
         borderWidth: 2,
-        borderColor: "#159A9C",
+        borderColor: "white",
         borderRadius: 8,
+        backgroundColor: 'black'
     },
 
     button: {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#159A9C",
+        backgroundColor: "black",
         color: "white",
         borderRadius: 8,
         width: 45,
