@@ -17,8 +17,8 @@ export const styles = StyleSheet.create({
 
     contener_person: {  
         display: 'flex',
-        justifyContent: 'center',
-        width: "100%"
+        flex: 1,
+        width: "100%",
     },
 
     contener_input: {
@@ -30,6 +30,7 @@ export const styles = StyleSheet.create({
     },
 
     contener_resultado: {
+        flex: 1,
         display: "flex",
         alignItems: "center",
         borderColor: "black",

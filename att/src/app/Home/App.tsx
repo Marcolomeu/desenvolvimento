@@ -22,9 +22,6 @@ export default function App() {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.contener_resultado}>
-                    {
-                        
-                    }
                     <Event name='Maça'/>
                     <Event name='Banana'/>
                     <Event name='Melância'/>

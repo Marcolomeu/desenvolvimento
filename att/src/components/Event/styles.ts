@@ -16,18 +16,15 @@ export const styles = StyleSheet.create({
         textAlign: "left",
         fontSize: 16,
         color: "#002333",
-        backgroundColor: "white",
-        borderWidth: 2,
-        borderColor: "#159A9C",
-        borderRadius: 8,
-        padding: 10
+        padding: 10,
+        borderBottomColor: "black",
+        borderBottomWidth: 1
     },
 
     button: {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#FF4B4B",
         borderRadius: 8,
         width: 45,
         height: 45,
