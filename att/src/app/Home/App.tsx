@@ -7,8 +7,6 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function App() {
 
-    const list = ["Banana", "Maça", "Uva", "Arroz", "Feijão 'Mas não é feijão'"]
-
     return (
         <View style={styles.container}>
             <View style={styles.titulo_container}>
@@ -22,7 +20,7 @@ export default function App() {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.contener_resultado}>
-                    <Event name='Maça'/>
+                    <Event name='Maçã'/>
                     <Event name='Banana'/>
                     <Event name='Melância'/>
                 </View>
