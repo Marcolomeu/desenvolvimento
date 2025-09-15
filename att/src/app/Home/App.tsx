@@ -3,6 +3,7 @@ import { styles } from './styles';
 import { Event } from '../../components/Event';
 import { Button, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import { useState } from 'react';
 
 
 export default function App() {
