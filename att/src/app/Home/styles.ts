@@ -93,5 +93,12 @@ export const styles = StyleSheet.create({
         fontSize: 17,
         color: "white",
     },
+    area:{
+        display:'flex',
+        borderWidth: 2,
+        borderRadius: 15,
+        padding:10,
+        height: '90%'
+    }
 
 });

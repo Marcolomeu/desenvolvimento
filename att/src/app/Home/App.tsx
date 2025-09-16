@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { styles } from './styles';
 import { Event } from '../../components/Event';
-import { Button, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native';
+import { Button, ScrollView, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { useState } from 'react';
 
@@ -20,13 +20,26 @@ export default function App() {
             <View style={styles.titulo_container}>
                 <Text style={styles.text_titul}>Lista de Compras</Text>
             </View>
+
             <View style={styles.contener_person}>
                 <View style={styles.contener_input}>
-                    <Input style={styles.input} placeholder='Digite o Produto' placeholderTextColor={"white"} onChangeText={e => setListName(e)} onPress={handleApp} 
+                    <TextInput style={styles.input} placeholder='Digite o Produto' placeholderTextColor={"white"} onChangeText={e => setListName(e)} 
                     value={listName}/>
                     <TouchableOpacity style={styles.button} activeOpacity={0.5}>
-                        <Text style={styles.buttonText}><AntDesign name="pluscircleo" size={24} color="white" /></Text>
+                        <Text style={styles.buttonText}><AntDesign name="pluscircleo" size={24} color="white" onPress={handleAdd}/></Text>
                     </TouchableOpacity>
+                </View>
+                <View>
+                    <ScrollView style={styles.area}>
+                        {
+                            list.map(item => (
+                                <Event
+                                    key={item}
+                                    name={item}
+                                />
+                            ))
+                        }
+                    </ScrollView>
                 </View>
             </View>
             <StatusBar style="auto" />
