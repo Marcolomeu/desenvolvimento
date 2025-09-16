@@ -7,6 +7,13 @@ import { useState } from 'react';
 
 
 export default function App() {
+    const [list, setlist] = useState<string[]>([])
+    const [listName, setListName] = useState('')
+
+    function handleAdd(){
+        setlist(prevState => [...prevState, listName])
+        setListName('')
+    }
 
     return (
         <View style={styles.container}>
@@ -15,15 +22,11 @@ export default function App() {
             </View>
             <View style={styles.contener_person}>
                 <View style={styles.contener_input}>
-                    <TextInput style={styles.input} placeholder='Digite algo' placeholderTextColor={"white"}/>
+                    <TextInput style={styles.input} placeholder='Digite o Produto' placeholderTextColor={"white"} onChangeText={e => setListName(e)} onPress={handleApp} 
+                    value={listName}/>
                     <TouchableOpacity style={styles.button} activeOpacity={0.5}>
                         <Text style={styles.buttonText}><AntDesign name="pluscircleo" size={24} color="white" /></Text>
                     </TouchableOpacity>
-                </View>
-                <View style={styles.contener_resultado}>
-                    <Event name='Maçã'/>
-                    <Event name='Banana'/>
-                    <Event name='Melância'/>
                 </View>
             </View>
             <StatusBar style="auto" />
