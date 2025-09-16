@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         display: "flex",
         flex: 1,
         flexDirection: "column",
-        backgroundColor: '#DB4E37',
+        backgroundColor: 'white',
         padding: 10
     },
 
