@@ -22,7 +22,7 @@ export default function App() {
             </View>
             <View style={styles.contener_person}>
                 <View style={styles.contener_input}>
-                    <TextInput style={styles.input} placeholder='Digite o Produto' placeholderTextColor={"white"} onChangeText={e => setListName(e)} onPress={handleApp} 
+                    <Input style={styles.input} placeholder='Digite o Produto' placeholderTextColor={"white"} onChangeText={e => setListName(e)} onPress={handleApp} 
                     value={listName}/>
                     <TouchableOpacity style={styles.button} activeOpacity={0.5}>
                         <Text style={styles.buttonText}><AntDesign name="pluscircleo" size={24} color="white" /></Text>
