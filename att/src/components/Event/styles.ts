@@ -34,6 +34,15 @@ export const styles = StyleSheet.create({
         fontSize: 17,
         fontWeight: "600",
         color: "white",
-    }
+    },
+    input: {
+        flex: 1,
+        textAlign: 'left',
+        color: "white",
+        borderWidth: 2,
+        borderColor: "white",
+        borderRadius: 8,
+        backgroundColor: 'black'
+    },
 
 })

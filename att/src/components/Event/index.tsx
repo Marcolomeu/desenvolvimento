@@ -14,3 +14,15 @@ export function Event({name}:Props) {
         </View>
     );
 }
+
+export function Input({placeH, onChangeText, onPress, value}: Props) {
+    return (
+        <View style={styles.contener}>
+            <TextInput style ={styles.input} placeholder= {placeH} placeholderTextColor={'#ada9a8'} onChanceText={onChangeText} value={value}>
+            </TextInput>
+            <TouchableOpacity style={styles.button} onPress={onPress}>
+                <Text style={styles.button}><AntDesign name="delete" size={24} color="black"/></Text>
+            </TouchableOpacity>
+        </View>
+    )
+}

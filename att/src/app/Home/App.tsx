@@ -14,6 +14,9 @@ export default function App() {
         setlist(prevState => [...prevState, listName])
         setListName('')
     }
+    function handRemove(name:string) {
+        return setlist(prevState => prevState.filter(item => item !== name))
+    }
 
     return (
         <View style={styles.container}>
@@ -36,6 +39,17 @@ export default function App() {
                                 <Event
                                     key={item}
                                     name={item}
+                                />
+                            ))
+                        }
+
+                        {
+                            list.map(item => (
+                                <Itens 
+                                    key = {item}
+                                    name = {item}
+                                    onPress={ () => handRemove(item)}
+                                
                                 />
                             ))
                         }
