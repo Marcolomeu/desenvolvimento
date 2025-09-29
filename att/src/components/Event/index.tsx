@@ -4,9 +4,17 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 
 type Props = {
     name:string,
+    placeH: string,
+    onChangeText: (texto : string) => void,
+    onPress: () => void,
+    value: string
 }
 
-export function Event({name}:Props) {
+type PropEvent = {
+    name : string
+}
+
+export function Event({name} : PropEvent) {
     return (
         <View style={styles.contener}>
             <Text style={styles.buttonText}><AntDesign name="checkcircle" size={24} color="black" /></Text>
@@ -18,11 +26,20 @@ export function Event({name}:Props) {
 export function Input({placeH, onChangeText, onPress, value}: Props) {
     return (
         <View style={styles.contener}>
-            <TextInput style ={styles.input} placeholder= {placeH} placeholderTextColor={'#ada9a8'} onChanceText={onChangeText} value={value}>
+            <TextInput style ={styles.input} placeholder= {placeH} placeholderTextColor={'#ada9a8'} onChangeText={(Itens) =>onChangeText (Itens)} value={value}>
             </TextInput>
             <TouchableOpacity style={styles.button} onPress={onPress}>
                 <Text style={styles.button}><AntDesign name="delete" size={24} color="black"/></Text>
             </TouchableOpacity>
+        </View>
+    )
+}
+
+
+export function Itens() {
+    return(
+        <View style={styles.contener}>
+            <Text style ={styles.buttonText}><AntDesign name="delete" size={24} color="black" /></Text>
         </View>
     )
 }

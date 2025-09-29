@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { styles } from './styles';
-import { Event } from '../../components/Event';
+import { Event, Itens } from '../../components/Event';
 import { Button, ScrollView, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { useState } from 'react';
