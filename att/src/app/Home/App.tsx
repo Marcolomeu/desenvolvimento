@@ -1,62 +1,52 @@
 import { StatusBar } from 'expo-status-bar';
 import { styles } from './styles';
-import { Event, Itens } from '../../components/Event';
-import { Button, ScrollView, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native';
+import { Itens } from '../../components/Event';   // ajuste o caminho se necessário
+import { ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { useState } from 'react';
 
-
 export default function App() {
-    const [list, setlist] = useState<string[]>([])
-    const [listName, setListName] = useState('')
+  const [list, setList] = useState<string[]>([]);
+  const [listName, setListName] = useState('');
 
-    function handleAdd(){
-        setlist(prevState => [...prevState, listName])
-        setListName('')
-    }
-    function handRemove(name:string) {
-        return setlist(prevState => prevState.filter(item => item !== name))
-    }
+  function handleAdd() {
+    if (!listName.trim()) return; // evita item vazio
+    setList(prev => [...prev, listName.trim()]);
+    setListName('');
+  }
 
-    return (
-        <View style={styles.container}>
-            <View style={styles.titulo_container}>
-                <Text style={styles.text_titul}>Lista de Compras</Text>
-            </View>
+  function handleRemove(name: string) {
+    setList(prev => prev.filter(item => item !== name));
+  }
 
-            <View style={styles.contener_person}>
-                <View style={styles.contener_input}>
-                    <TextInput style={styles.input} placeholder='Digite o Produto' placeholderTextColor={"white"} onChangeText={e => setListName(e)} 
-                    value={listName}/>
-                    <TouchableOpacity style={styles.button} activeOpacity={0.5}>
-                        <Text style={styles.buttonText}><AntDesign name="pluscircleo" size={24} color="white" onPress={handleAdd}/></Text>
-                    </TouchableOpacity>
-                </View>
-                <View>
-                    <ScrollView style={styles.area}>
-                        {
-                            list.map(item => (
-                                <Event
-                                    key={item}
-                                    name={item}
-                                />
-                            ))
-                        }
+  return (
+    <View style={styles.container}>
+      <View style={styles.titulo_container}>
+        <Text style={styles.text_titul}>Lista de Compras</Text>
+      </View>
 
-                        {
-                            list.map(item => (
-                                <Itens 
-                                    key = {item}
-                                    name = {item}
-                                    onPress={ () => handRemove(item)}
-                                
-                                />
-                            ))
-                        }
-                    </ScrollView>
-                </View>
-            </View>
-            <StatusBar style="auto" />
+      <View style={styles.contener_person}>
+        <View style={styles.contener_input}>
+          <TextInput
+            style={styles.input}
+            placeholder="Digite o Produto"
+            placeholderTextColor="white"
+            onChangeText={setListName}
+            value={listName}
+          />
+          <TouchableOpacity style={styles.button} onPress={handleAdd}>
+            <AntDesign name="pluscircleo" size={24} color="white" />
+          </TouchableOpacity>
         </View>
-    );
+
+        <ScrollView style={styles.area}>
+          {list.map(item => (
+            <Itens key={item} name={item} onPress={() => handleRemove(item)} />
+          ))}
+        </ScrollView>
+      </View>
+
+      <StatusBar style="auto" />
+    </View>
+  );
 }
